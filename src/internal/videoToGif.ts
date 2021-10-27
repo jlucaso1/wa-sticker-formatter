@@ -1,6 +1,6 @@
-import ffmpeg from 'fluent-ffmpeg'
 import { writeFile, readFile, unlink } from 'fs-extra'
 import { tmpdir } from 'os'
+import ffmpeg from './ffmpeg'
 
 /** https://stackoverflow.com/questions/52156713/fluent-ffmpeg-h264-to-gif-throwing-error-1 */
 const videoToGif = async (data: Buffer): Promise<Buffer> => {

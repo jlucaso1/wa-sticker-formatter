@@ -1,11 +1,11 @@
-import Ffmpeg from 'fluent-ffmpeg'
 import { readFile } from 'fs-extra'
 import { tmpdir } from 'os'
+import ffmpeg from './ffmpeg'
 
 const crop = async (filename: string): Promise<Buffer> => {
     const file = await new Promise<string>((resolve) => {
         const name = `${tmpdir()}/${Math.random().toString(36)}.webp`
-        Ffmpeg(filename)
+        ffmpeg(filename)
             // eslint-disable-next-line no-useless-escape
             .outputOptions([
                 '-vcodec',
