@@ -1,4 +1,4 @@
-import sharp from 'sharp'
+import sharp, { Color } from 'sharp'
 import { StickerTypes } from './internal/Metadata/StickerTypes'
 
 /** Sticker metadata config */
@@ -23,6 +23,10 @@ export interface IStickerOptions extends IStickerConfig {
      * Quality of the output webp image. Must be an integer from 0 to 100 (defaults to 100
      */
     quality?: sharp.WebpOptions['quality']
+    /**
+     * Background Color of the sticker (only for type full)
+     */
+    background?: Color
 }
 
 export interface IRawMetadata {
